@@ -1,7 +1,11 @@
 package org.example;
 
+import org.example.DTO.Project;
+import org.example.DTO.Project_Worker;
+import org.example.DTO.Worker;
+import org.example.Service.DatabasePopulateService;
+
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -49,7 +53,7 @@ public class InputToTableData {
         for (Project project: projects) {
             prst.setInt(1, project.getClient_id());
             prst.setDate(2, project.getStart_date());
-            prst.setDate(2, project.getFinish_date());
+            prst.setDate(3, project.getFinish_date());
             prst.addBatch();
         }
         prst.executeBatch();

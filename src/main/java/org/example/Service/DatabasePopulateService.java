@@ -1,6 +1,10 @@
-package org.example;
+package org.example.Service;
 
 
+
+import org.example.DTO.Project;
+import org.example.DTO.Project_Worker;
+import org.example.DTO.Worker;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,7 +36,7 @@ public class DatabasePopulateService {
                     String name = splitLine[0];
                     Date birtnday = Date.valueOf(splitLine[1]);
                     String level = splitLine[2];
-                    Integer salary = Integer.parseInt(splitLine[4]);
+                    Integer salary = Integer.parseInt(splitLine[3]);
                     worker.add(new Worker(name, birtnday, level, salary));
                 }
             } catch (IOException e) {

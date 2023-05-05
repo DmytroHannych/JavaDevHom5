@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DTO;
 
 public class Project_Worker {
     private Integer project_id;

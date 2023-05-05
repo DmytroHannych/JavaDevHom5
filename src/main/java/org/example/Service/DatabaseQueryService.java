@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Service;
+
+import org.example.DTO.*;
+import org.example.Database;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -7,7 +10,6 @@ import java.nio.file.Paths;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +21,7 @@ public class DatabaseQueryService {
     private static final String Find_Youngest = "sql/find_youngest_eldest_workers.sql";
     private static final String Print_Project_Price = "sql/print_project_prices.sql";
     Database database = Database.getInstance();
-    List<MaxProjectCountClient> findMaxProjectsClient() throws SQLException, IOException {
+    public List<MaxProjectCountClient> findMaxProjectsClient() throws SQLException, IOException {
         List<MaxProjectCountClient> maxProjectCountClients = new ArrayList<>();
         String sql = String.join(
                 "\n",

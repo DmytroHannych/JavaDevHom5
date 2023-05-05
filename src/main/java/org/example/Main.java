@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Service.DatabaseQueryService;
+
 import java.io.IOException;
 import java.sql.SQLException;
 

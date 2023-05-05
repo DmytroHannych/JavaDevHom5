@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DTO;
 
 public class LongestProject {
     private String id;
