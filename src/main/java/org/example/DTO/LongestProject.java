@@ -8,4 +8,12 @@ public class LongestProject {
         this.id = id;
         this.mounth = mounth;
     }
+
+    @Override
+    public String toString() {
+        return "LongestProject{" +
+                "id='" + id + '\'' +
+                ", mounth=" + mounth +
+                '}';
+    }
 }

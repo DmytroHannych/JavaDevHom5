@@ -14,6 +14,5 @@ public class Main {
         databaseQueryService.findLongestProgect();
         databaseQueryService.findProjectCost();
         databaseQueryService.printList();
-
     }
 }

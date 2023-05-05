@@ -78,7 +78,6 @@ public class DatabasePopulateService {
                     String[] splitLine = line.split(",");
                     Integer project_id = Integer.parseInt(splitLine[0]);
                     Integer worker_id = Integer.parseInt(splitLine[1]);
-
                     project_And_workers.add(new ProjectAndWorker(project_id, worker_id));
                 }
             } catch (IOException e) {

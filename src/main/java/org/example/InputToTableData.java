@@ -18,9 +18,9 @@ public class InputToTableData {
 
     public static void main(String[] args) throws SQLException {
         InputToTableData inputToTableData = new InputToTableData();
-        inputToTableData.insertToTableWorkerDate();
-        inputToTableData.insertToTableClient();
-        inputToTableData.insertToTableProjectDate();
+//        inputToTableData.insertToTableWorkerDate();
+//        inputToTableData.insertToTableClient();
+//        inputToTableData.insertToTableProjectDate();
         inputToTableData.insertToTableProject_WorkerDate();
     }
 
