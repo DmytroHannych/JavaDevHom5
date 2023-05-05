@@ -1,10 +1,10 @@
 package org.example.DTO;
 
-public class Project_Worker {
+public class ProjectAndWorker {
     private Integer project_id;
     private Integer worker_id;
 
-    public Project_Worker(Integer project_id, Integer worker_id) {
+    public ProjectAndWorker(Integer project_id, Integer worker_id) {
         this.project_id = project_id;
         this.worker_id = worker_id;
     }

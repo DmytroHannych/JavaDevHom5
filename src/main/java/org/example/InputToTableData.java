@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.DTO.Project;
-import org.example.DTO.Project_Worker;
+import org.example.DTO.ProjectAndWorker;
 import org.example.DTO.Worker;
 import org.example.Service.DatabasePopulateService;
 
@@ -60,11 +60,11 @@ public class InputToTableData {
     }
 
     public void insertToTableProject_WorkerDate() throws SQLException {
-        List<Project_Worker> project_workers = databasePopulateService.getProject_WorkerDataFromFile();
+        List<ProjectAndWorker> project_And_workers = databasePopulateService.getProjectWorkerDataFromFile();
         prst = con.prepareStatement("INSERT INTO project_worker (project_id, worker_id) VALUES(?,?)");
-        for (Project_Worker project_worker: project_workers) {
-            prst.setInt(1, project_worker.getProject_id());
-            prst.setInt(2,project_worker.getWorker_id());
+        for (ProjectAndWorker project_And_worker : project_And_workers) {
+            prst.setInt(1, project_And_worker.getProject_id());
+            prst.setInt(2, project_And_worker.getWorker_id());
             prst.addBatch();
         }
         prst.executeBatch();

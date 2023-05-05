@@ -3,7 +3,7 @@ package org.example.Service;
 
 
 import org.example.DTO.Project;
-import org.example.DTO.Project_Worker;
+import org.example.DTO.ProjectAndWorker;
 import org.example.DTO.Worker;
 
 import java.io.File;
@@ -20,7 +20,7 @@ public class DatabasePopulateService {
         DatabasePopulateService databasePopulateService = new DatabasePopulateService();
         databasePopulateService.getWorkersDataFromFile();
         databasePopulateService.getProjectDataFromFile();
-        databasePopulateService.getProject_WorkerDataFromFile();
+        databasePopulateService.getProjectWorkerDataFromFile();
     }
 
 
@@ -67,8 +67,8 @@ public class DatabasePopulateService {
         return project;
     }
 
-    public List<Project_Worker> getProject_WorkerDataFromFile() {
-        List<Project_Worker> project_workers = new ArrayList<>();
+    public List<ProjectAndWorker> getProjectWorkerDataFromFile() {
+        List<ProjectAndWorker> project_And_workers = new ArrayList<>();
         File file = new File("project_worker.txt");
         if (file.exists()) {
             try (FileInputStream fis = new FileInputStream(file);
@@ -79,13 +79,13 @@ public class DatabasePopulateService {
                     Integer project_id = Integer.parseInt(splitLine[0]);
                     Integer worker_id = Integer.parseInt(splitLine[1]);
 
-                    project_workers.add(new Project_Worker(project_id, worker_id));
+                    project_And_workers.add(new ProjectAndWorker(project_id, worker_id));
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        return project_workers;
+        return project_And_workers;
     }
 
 }
