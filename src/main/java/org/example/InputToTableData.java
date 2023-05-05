@@ -11,17 +11,19 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class InputToTableData {
-    Database database = Database.getInstance();
-    private PreparedStatement prst;
-    Connection con = database.getConnection();
+    static Database database = Database.getInstance();
+    private static PreparedStatement prst;
+    static Connection con = database.getConnection();
     DatabasePopulateService databasePopulateService = new DatabasePopulateService();
 
     public static void main(String[] args) throws SQLException {
         InputToTableData inputToTableData = new InputToTableData();
-//        inputToTableData.insertToTableWorkerDate();
-//        inputToTableData.insertToTableClient();
-//        inputToTableData.insertToTableProjectDate();
+        inputToTableData.insertToTableWorkerDate();
+        inputToTableData.insertToTableClient();
+        inputToTableData.insertToTableProjectDate();
         inputToTableData.insertToTableProject_WorkerDate();
+        prst.close();
+        con.close();
     }
 
     public void insertToTableClient() throws SQLException {
